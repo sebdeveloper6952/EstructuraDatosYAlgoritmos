@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using ControlVentas;
 using System.IO;
+using System;
 
 namespace Hospital
 {
@@ -18,6 +19,8 @@ namespace Hospital
         #endregion
 
         #region Public Methods
+        public List<CPaciente> GetListaPacientes() { return pacientes; }
+
         /// <summary>
         /// Agrega un nuevo paciente a la lista de pacientes.
         /// </summary>
@@ -45,6 +48,13 @@ namespace Hospital
         {
             if(index >= 0)
                 pacientes.RemoveAt(index);
+        }
+
+        public CPaciente GetPaciente(int index)
+        {
+            if (index > pacientes.Count)
+                throw new IndexOutOfRangeException("Index out of range.");
+            return pacientes[index];
         }
 
         /// <summary>
@@ -79,7 +89,7 @@ namespace Hospital
             {
                 foreach (CPaciente p in pacientes)
                 {
-                    if (p.nombre == nombre && p.sangre == sangre)
+                    if (p.nombre == nombre && p.GetSangre() == sangre)
                         subconjunto.Add(p);
                 }
             }
@@ -98,7 +108,7 @@ namespace Hospital
             {
                 foreach (CPaciente p in pacientes)
                 {
-                    if (p.apellido == apellido && p.sangre == sangre)
+                    if (p.apellido == apellido && p.GetSangre() == sangre)
                         subconjunto.Add(p);
                 }
             }
@@ -107,7 +117,7 @@ namespace Hospital
             {
                 foreach (CPaciente p in pacientes)
                 {
-                    if (p.sangre == sangre)
+                    if (p.GetSangre() == sangre)
                         subconjunto.Add(p);
                 }
             }
@@ -116,7 +126,7 @@ namespace Hospital
             {
                 foreach (CPaciente p in pacientes)
                 {
-                    if (p.nombre == nombre && p.apellido == apellido && p.sangre == sangre)
+                    if (p.nombre == nombre && p.apellido == apellido && p.GetSangre() == sangre)
                         subconjunto.Add(p);
                 }
             }
@@ -157,9 +167,24 @@ namespace Hospital
                 string[] lineArray = line.Split('$');
                 string nombre = lineArray[0];
                 string apellido = lineArray[1];
-                string razon = lineArray[2];
-                ETipoDeSangre sangre = (ETipoDeSangre)int.Parse(lineArray[3]);
-                CPaciente p = new CPaciente(nombre, apellido, razon, sangre);
+                string dpi = lineArray[2];
+                int year = int.Parse(lineArray[3]);
+                int month = int.Parse(lineArray[4]);
+                int day = int.Parse(lineArray[5]);
+                string razon = lineArray[6];
+                DateTime f = new DateTime(year, month, day);
+                ETipoDeSangre sangre = (ETipoDeSangre)int.Parse(lineArray[7]);
+                string[] asisArray = lineArray[8].Split('#');
+                List<CAsistencia> asisList = new List<CAsistencia>();
+                foreach(string s in asisArray)
+                {
+                    if (string.IsNullOrEmpty(s))
+                        continue;
+                    string[] asistenciaIndividual = s.Split('_');
+                    CAsistencia a = new CAsistencia(asistenciaIndividual[0], asistenciaIndividual[1]);
+                    asisList.Add(a);
+                }
+                CPaciente p = new CPaciente(nombre, apellido, dpi,f, razon, sangre,asisList);
                 pacientes.Add(p);
             }
         }

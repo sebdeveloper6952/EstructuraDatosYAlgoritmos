@@ -1,0 +1,31 @@
+﻿<Window x:Class="PrimerParcial.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PrimerParcial"
+        mc:Ignorable="d"
+        Title="PokeJuguetes!" Height="342.826" Width="390.819" Loaded="Window_Loaded" Icon="Pokeball.ico">
+    <Grid>
+        <ListView x:Name="lV_Juguetes" HorizontalAlignment="Left" Height="204" Margin="18,45,0,0" VerticalAlignment="Top" Width="148">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="Juguetes" Width="140"/>
+                </GridView>
+            </ListView.View>
+        </ListView>
+        <Label x:Name="l_ListaJuguetes" Content="Productos" HorizontalAlignment="Left" Margin="59,10,0,0" VerticalAlignment="Top"/>
+        <ListView x:Name="lV_Orden" HorizontalAlignment="Left" Height="204" Margin="202,45,0,0" VerticalAlignment="Top" Width="148">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="Juguetes" Width="140"/>
+                </GridView>
+            </ListView.View>
+        </ListView>
+        <Button x:Name="btn_AgregarOrden" Content="Agregar a orden" HorizontalAlignment="Left" Margin="37,268,0,0" VerticalAlignment="Top" Width="109" Click="btn_AgregarOrden_Click"/>
+        <Label x:Name="l_Orden" Content="Orden" HorizontalAlignment="Left" Margin="252,14,0,0" VerticalAlignment="Top"/>
+        <Button x:Name="btn_ColocarOrden" Content="Colocar orden" HorizontalAlignment="Left" Margin="266,268,0,0" VerticalAlignment="Top" Width="109" Click="btn_ColocarOrden_Click"/>
+        <Button x:Name="btn_QuitarDeOrden" Content="Limpiar Orden" HorizontalAlignment="Left" Margin="171,268,0,0" VerticalAlignment="Top" Width="89" Click="btn_QuitarDeOrden_Click"/>
+
+    </Grid>
+</Window>

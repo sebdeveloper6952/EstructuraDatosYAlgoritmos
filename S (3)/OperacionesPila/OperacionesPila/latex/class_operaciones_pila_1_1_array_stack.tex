@@ -1,0 +1,107 @@
+\hypertarget{class_operaciones_pila_1_1_array_stack}{}\section{Operaciones\+Pila.\+Array\+Stack$<$ T $>$ Class Template Reference}
+\label{class_operaciones_pila_1_1_array_stack}\index{Operaciones\+Pila.\+Array\+Stack$<$ T $>$@{Operaciones\+Pila.\+Array\+Stack$<$ T $>$}}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_operaciones_pila_1_1_array_stack_a71fa2281672474bbef92556bf944a176}{Array\+Stack} (int max\+Size)
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+int \hyperlink{class_operaciones_pila_1_1_array_stack_aef6d20149157d51dafe5c7a0c70275a9}{Size} ()
+\begin{DoxyCompactList}\small\item\em Entrada\+: nada Salidas\+: Devuelve la cantidad de elementos en la pila. Poscondicion\+: Los datos permanecen sin cambio. \end{DoxyCompactList}\item 
+void \hyperlink{class_operaciones_pila_1_1_array_stack_a24832d21024200fba53690fe399277e6}{Push} (T item)
+\begin{DoxyCompactList}\small\item\em Entradas\+: el elemento de tipo T que se desea ingresar a la pila Salidas\+: Lanza una \hyperlink{class_operaciones_pila_1_1_full_stack_exception}{Full\+Stack\+Exception} si la pila esta llena. Poscondicion\+: Si la pila no esta llena, se agrega el elemento al top de la pila. \end{DoxyCompactList}\item 
+T \hyperlink{class_operaciones_pila_1_1_array_stack_a077d65f90d9b421a881dab181e136147}{Pop} ()
+\begin{DoxyCompactList}\small\item\em Entradas\+: ninguna. Salidas\+: Si la pila esta vacia, lanza una \hyperlink{class_operaciones_pila_1_1_empty_stack_exception}{Empty\+Stack\+Exception}. Si no esta vacia, remueve y devuelve el elemento que esta en la posicion top de la pila. Poscondicion\+: Si la pila no esta vacia, se remueve el elemento top de la pila. \end{DoxyCompactList}\item 
+T \hyperlink{class_operaciones_pila_1_1_array_stack_ac0b80f6ed3ef56c01e9fd4c847504444}{Peek} ()
+\begin{DoxyCompactList}\small\item\em Entradas\+:ninguna. Salidas\+: Si la pila esta vacia, lanza una \hyperlink{class_operaciones_pila_1_1_empty_stack_exception}{Empty\+Stack\+Exception}. Si no esta vacia, devuelve el elemento en la posicion top de la pila. Poscondicion\+: Los datos permanecen sin cambio. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_operaciones_pila_1_1_array_stack_af3e83c01e1e9acb877368f2c84f7b2af}\label{class_operaciones_pila_1_1_array_stack_af3e83c01e1e9acb877368f2c84f7b2af}} 
+T \mbox{[}$\,$\mbox{]} {\bfseries stack}
+\item 
+\mbox{\Hypertarget{class_operaciones_pila_1_1_array_stack_a2fdd9c8be1b81c13ca35da135cbec7be}\label{class_operaciones_pila_1_1_array_stack_a2fdd9c8be1b81c13ca35da135cbec7be}} 
+int {\bfseries top}
+\item 
+\mbox{\Hypertarget{class_operaciones_pila_1_1_array_stack_ae90b2997e9685d9de9300746947b6b96}\label{class_operaciones_pila_1_1_array_stack_ae90b2997e9685d9de9300746947b6b96}} 
+int {\bfseries max\+Size}
+\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_operaciones_pila_1_1_array_stack_a71fa2281672474bbef92556bf944a176}\label{class_operaciones_pila_1_1_array_stack_a71fa2281672474bbef92556bf944a176}} 
+\index{Operaciones\+Pila\+::\+Array\+Stack@{Operaciones\+Pila\+::\+Array\+Stack}!Array\+Stack@{Array\+Stack}}
+\index{Array\+Stack@{Array\+Stack}!Operaciones\+Pila\+::\+Array\+Stack@{Operaciones\+Pila\+::\+Array\+Stack}}
+\subsubsection{\texorpdfstring{Array\+Stack()}{ArrayStack()}}
+{\footnotesize\ttfamily \hyperlink{class_operaciones_pila_1_1_array_stack}{Operaciones\+Pila.\+Array\+Stack}$<$ T $>$.\hyperlink{class_operaciones_pila_1_1_array_stack}{Array\+Stack} (\begin{DoxyParamCaption}\item[{int}]{max\+Size }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em max\+Size} & El tamaño de la pila.\\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_operaciones_pila_1_1_array_stack_ac0b80f6ed3ef56c01e9fd4c847504444}\label{class_operaciones_pila_1_1_array_stack_ac0b80f6ed3ef56c01e9fd4c847504444}} 
+\index{Operaciones\+Pila\+::\+Array\+Stack@{Operaciones\+Pila\+::\+Array\+Stack}!Peek@{Peek}}
+\index{Peek@{Peek}!Operaciones\+Pila\+::\+Array\+Stack@{Operaciones\+Pila\+::\+Array\+Stack}}
+\subsubsection{\texorpdfstring{Peek()}{Peek()}}
+{\footnotesize\ttfamily T \hyperlink{class_operaciones_pila_1_1_array_stack}{Operaciones\+Pila.\+Array\+Stack}$<$ T $>$.Peek (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Entradas\+:ninguna. Salidas\+: Si la pila esta vacia, lanza una \hyperlink{class_operaciones_pila_1_1_empty_stack_exception}{Empty\+Stack\+Exception}. Si no esta vacia, devuelve el elemento en la posicion top de la pila. Poscondicion\+: Los datos permanecen sin cambio. 
+
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_operaciones_pila_1_1_array_stack_a077d65f90d9b421a881dab181e136147}\label{class_operaciones_pila_1_1_array_stack_a077d65f90d9b421a881dab181e136147}} 
+\index{Operaciones\+Pila\+::\+Array\+Stack@{Operaciones\+Pila\+::\+Array\+Stack}!Pop@{Pop}}
+\index{Pop@{Pop}!Operaciones\+Pila\+::\+Array\+Stack@{Operaciones\+Pila\+::\+Array\+Stack}}
+\subsubsection{\texorpdfstring{Pop()}{Pop()}}
+{\footnotesize\ttfamily T \hyperlink{class_operaciones_pila_1_1_array_stack}{Operaciones\+Pila.\+Array\+Stack}$<$ T $>$.Pop (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Entradas\+: ninguna. Salidas\+: Si la pila esta vacia, lanza una \hyperlink{class_operaciones_pila_1_1_empty_stack_exception}{Empty\+Stack\+Exception}. Si no esta vacia, remueve y devuelve el elemento que esta en la posicion top de la pila. Poscondicion\+: Si la pila no esta vacia, se remueve el elemento top de la pila. 
+
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_operaciones_pila_1_1_array_stack_a24832d21024200fba53690fe399277e6}\label{class_operaciones_pila_1_1_array_stack_a24832d21024200fba53690fe399277e6}} 
+\index{Operaciones\+Pila\+::\+Array\+Stack@{Operaciones\+Pila\+::\+Array\+Stack}!Push@{Push}}
+\index{Push@{Push}!Operaciones\+Pila\+::\+Array\+Stack@{Operaciones\+Pila\+::\+Array\+Stack}}
+\subsubsection{\texorpdfstring{Push()}{Push()}}
+{\footnotesize\ttfamily void \hyperlink{class_operaciones_pila_1_1_array_stack}{Operaciones\+Pila.\+Array\+Stack}$<$ T $>$.Push (\begin{DoxyParamCaption}\item[{T}]{item }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Entradas\+: el elemento de tipo T que se desea ingresar a la pila Salidas\+: Lanza una \hyperlink{class_operaciones_pila_1_1_full_stack_exception}{Full\+Stack\+Exception} si la pila esta llena. Poscondicion\+: Si la pila no esta llena, se agrega el elemento al top de la pila. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em item} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_operaciones_pila_1_1_array_stack_aef6d20149157d51dafe5c7a0c70275a9}\label{class_operaciones_pila_1_1_array_stack_aef6d20149157d51dafe5c7a0c70275a9}} 
+\index{Operaciones\+Pila\+::\+Array\+Stack@{Operaciones\+Pila\+::\+Array\+Stack}!Size@{Size}}
+\index{Size@{Size}!Operaciones\+Pila\+::\+Array\+Stack@{Operaciones\+Pila\+::\+Array\+Stack}}
+\subsubsection{\texorpdfstring{Size()}{Size()}}
+{\footnotesize\ttfamily int \hyperlink{class_operaciones_pila_1_1_array_stack}{Operaciones\+Pila.\+Array\+Stack}$<$ T $>$.Size (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Entrada\+: nada Salidas\+: Devuelve la cantidad de elementos en la pila. Poscondicion\+: Los datos permanecen sin cambio. 
+
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+D\+:/\+U\+N\+I/3er Semestre/\+Estructuras/\+S (3)/\+Operaciones\+Pila/\+Operaciones\+Pila/Array\+Stack.\+cs\end{DoxyCompactItemize}

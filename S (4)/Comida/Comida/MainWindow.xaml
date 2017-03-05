@@ -1,0 +1,60 @@
+﻿<Window x:Class="Comida.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Comida"
+        mc:Ignorable="d"
+        Title="Control de Ordenes" Height="745.333" Width="1280" WindowState="Maximized" WindowStartupLocation="CenterScreen" Loaded="Window_Loaded" Closing="Window_Closing">
+    <Grid Background="#FF2E4253">
+        <TabControl x:Name="tabControl" Margin="0,0,0.333,-0.333" BorderBrush="#FF2E4253">
+            <TabItem Header="Ordenes" Background="#FF455A6D" Foreground="#FFB2B9C0">
+                <Grid Background="#FF2E4253">
+                    <ListView x:Name="lV_Menu" FontSize="18" HorizontalAlignment="Left" Margin="0,54,0,0" Width="398" MouseDoubleClick="lV_Menu_MouseDoubleClick" Height="522" VerticalAlignment="Top" Background="#FF455A6D" Foreground="#FFB2B9C0">
+                        <ListView.View>
+                            <GridView>
+                                <GridViewColumn Width="400" Header="Menu"/>
+                            </GridView>
+                        </ListView.View>
+                    </ListView>
+                    <ListView x:Name="lV_Pedidos" FontSize="18" HorizontalAlignment="Left" Height="464" Margin="427,54,0,0" VerticalAlignment="Top" Width="316" Background="#FF455A6D" Foreground="#FFB2B9C0">
+                        <ListView.View>
+                            <GridView>
+                                <GridViewColumn Header="Orden" Width="325"/>
+                            </GridView>
+                        </ListView.View>
+                    </ListView>
+                    <Button x:Name="btn_Ordenar" FontSize="18" Content="Ordenar" ToolTip="Usted ordena bajo su propio riesgo." HorizontalAlignment="Left" Margin="595,584,0,0" Width="75" Click="btn_Ordenar_Click" Foreground="#FFB2B9C0" Background="#FF455A6D" Height="30" VerticalAlignment="Top"/>
+                    <Label x:Name="l_Clientes" Content="Clientes" FontSize="20" HorizontalAlignment="Left" Margin="368,4,0,0" VerticalAlignment="Top" FontFamily="Comic Sans MS" Foreground="#FFB2B9C0"/>
+                    <Label x:Name="l_Cocina" Content="Cocina" HorizontalAlignment="Left" Margin="996,4,0,0" VerticalAlignment="Top" FontFamily="Comic Sans MS" FontSize="20" Foreground="#FFB2B9C0"/>
+                    <Button x:Name="btn_QuitarDeOrden" Content="Quitar" FontSize="18" HorizontalAlignment="Left" Margin="498,584,0,0" Width="75" Click="btn_QuitarDeOrden_Click" Foreground="#FFB2B9C0" Background="#FF455A6D" Height="30" VerticalAlignment="Top"/>
+                    <Button x:Name="btn_OrdenLista" Content="Listo" FontSize="18" HorizontalAlignment="Left" Margin="1000,590,0,0" VerticalAlignment="Top" Width="75" Click="btn_OrdenLista_Click" Foreground="#FFB2B9C0" Background="#FF455A6D"/>
+                    <ListView x:Name="lv_OrdenCocina" FontSize="18" Height="522" Margin="801,54,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.407,-0.127" HorizontalAlignment="Left" Width="456" Background="#FF455A6D" Foreground="#FFB2B9C0">
+                        <ListView.View>
+                            <GridView>
+                                <GridViewColumn Width="450" Header="Orden Actual"/>
+                            </GridView>
+                        </ListView.View>
+                    </ListView>
+                    <Label x:Name="l_TotalOrden" Content="Total: Q0.00" FontSize="18" HorizontalAlignment="Left" Margin="529,538,0,0" VerticalAlignment="Top" Foreground="#FFB2B9C0"/>
+                </Grid>
+            </TabItem>
+            <TabItem Header="Busqueda" Foreground="#FFB2B9C0" Background="#FF455A6D">
+                <Grid Background="#FF2E4253">
+                    <TabControl x:Name="tabControl1" Margin="0,0,0.333,-0.333" BorderBrush="#FF2E4253" Background="#FF2E4253">
+                        <TabItem Header="Fecha de Orden" Background="#FF455A6D" Foreground="#FFB2B9C0">
+                            <Grid Background="#FF2E4253"/>
+                        </TabItem>
+                        <TabItem Header="Por opcion de comida" Background="#FF455A6D" Foreground="#FFB2B9C0">
+                            <Grid Background="#FF2E4253"/>
+                        </TabItem>
+                        <TabItem Header="Por cantidad de items" Background="#FF455A6D" Foreground="#FFB2B9C0">
+                            <Grid Background="#FF2E4253"/>
+                        </TabItem>
+                    </TabControl>
+                </Grid>
+            </TabItem>
+        </TabControl>
+
+    </Grid>
+</Window>

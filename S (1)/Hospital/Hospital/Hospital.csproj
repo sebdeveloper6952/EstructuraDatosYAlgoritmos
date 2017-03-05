@@ -67,10 +67,19 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="CAdminPacientes.cs" />
+    <Compile Include="CAsistencia.cs" />
     <Compile Include="CPaciente.cs" />
     <Compile Include="CPersona.cs" />
+    <Compile Include="CPersonaCompararApellido.cs" />
+    <Compile Include="CPersonaCompararAsistencia.cs" />
+    <Compile Include="CPersonaCompararDPI.cs" />
+    <Compile Include="CPersonaCompararEdad.cs" />
+    <Compile Include="CPersonaCompararFechaNacimiento.cs" />
+    <Compile Include="CPersonaCompararNombre.cs" />
+    <Compile Include="CPersonaCompararRazon.cs" />
     <Compile Include="CUtilities.cs" />
     <Compile Include="IGuardarYCargar.cs" />
+    <Compile Include="LogSystem.cs" />
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>

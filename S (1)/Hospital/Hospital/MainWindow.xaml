@@ -5,39 +5,418 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Hospital"
         mc:Ignorable="d"
-        Title="MainWindow" Height="354" Width="826.333" Loaded="Window_Loaded" Closing="Window_Closing" Icon="icon.ico">
-    <Grid Background="#FFE5E5E5">
-        <Label x:Name="l_Ingreso_Nombre" Content="Nombre" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top"/>
-        <Label x:Name="l_Ingreso_Apellido" Content="Apellido" HorizontalAlignment="Left" Margin="10,46,0,0" VerticalAlignment="Top"/>
-        <Label x:Name="l_Ingreso_Sangre" Content="Tipo de Sangre" HorizontalAlignment="Left" Margin="10,85,0,0" VerticalAlignment="Top"/>
-        <Label x:Name="l_Ingreso_Razon" Content="Razon de ingreso" HorizontalAlignment="Left" Margin="10,126,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="tB_Ingreso_Nombre" PreviewTextInput="TextInputValidation" TabIndex="0" HorizontalAlignment="Left" Height="23" Margin="127,14,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <TextBox x:Name="tB_Ingreso_Apellido" PreviewTextInput="TextInputValidation" TabIndex="1" HorizontalAlignment="Left" Height="23" Margin="127,50,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <ComboBox x:Name="cB_Ingreso_Sangre" TabIndex="2" HorizontalAlignment="Left" Margin="127,85,0,0" VerticalAlignment="Top" Width="120">
-            <ComboBoxItem Content="Cualquiera"/>
-            <ComboBoxItem Content="O-"/>
-            <ComboBoxItem Content="O+"/>
-            <ComboBoxItem Content="A-"/>
-            <ComboBoxItem Content="A+"/>
-            <ComboBoxItem Content="B-"/>
-            <ComboBoxItem Content="B+"/>
-            <ComboBoxItem Content="AB-"/>
-            <ComboBoxItem Content="AB+"/>
-        </ComboBox>
-        <TextBox x:Name="tB_Ingreso_Razon" TabIndex="3" HorizontalAlignment="Left" Height="88" Margin="127,129,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="169"/>
-        <ListView x:Name="lV_Pacientes" Margin="363,29,10.333,51.667">
-            <ListView.View>
-                <GridView>
-                    <GridViewColumn Header="Nombre" Width="100" DisplayMemberBinding="{Binding nombre}"/>
-                    <GridViewColumn Header="Apellido" Width="100" DisplayMemberBinding="{Binding apellido}"/>
-                    <GridViewColumn Header="Tipo de Sangre" Width="100" DisplayMemberBinding="{Binding sangreS}"/>
-                    <GridViewColumn Header="Razon de Ingreso" Width="135" DisplayMemberBinding="{Binding razon}"/>
-                </GridView>
-            </ListView.View>
-        </ListView>
-        <Button x:Name="btn_Ingresar" Content="Ingresar" HorizontalAlignment="Left" Margin="78,249,0,0" VerticalAlignment="Top" Height="25" Width="75" Click="btn_Ingresar_Click"/>
-        <Button x:Name="btn_Buscar" Content="Buscar" HorizontalAlignment="Left" Margin="205,249,0,0" VerticalAlignment="Top" Height="25" Width="75" Click="btn_Buscar_Click"/>
-        <Label x:Name="l_Ingreso_Pacientes" Content="Pacientes" HorizontalAlignment="Left" Margin="549,1,0,0" VerticalAlignment="Top"/>
-        <Button x:Name="btn_Ingreso_Eliminar" Content="Eliminar Paciente" Background="Red" Margin="546,287,0,0" VerticalAlignment="Top" Height="25" HorizontalAlignment="Left" Width="101" Click="btn_Ingreso_Eliminar_Click"/>
+        Title="Hospital El Muerto Feliz" Height="428.333" Width="1041" Loaded="Window_Loaded" Closing="Window_Closing" Icon="icon.ico" Background="#FF2E4253" Foreground="#FF2E4253">
+    <Grid Background="#FF2E4253">
+        <TabControl x:Name="tabControl_Main" Margin="0,0,-0.333,-0.333" BorderBrush="#FF9B9B9B" Background="#FF2E4253">
+            <TabItem Header="Ingreso Pacientes">
+                <Grid Background="#FF2E4253">
+                    <Label x:Name="l_Ingreso_Nombre" Content="Nombre" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Foreground="#FFB2B9C0"/>
+                    <Label x:Name="l_Ingreso_Apellido" Content="Apellido" HorizontalAlignment="Left" Margin="10,46,0,0" VerticalAlignment="Top" Foreground="#FFB2B9C0"/>
+                    <Label x:Name="l_Ingreso_Sangre" Content="Tipo de Sangre" HorizontalAlignment="Left" Margin="10,176,0,0" VerticalAlignment="Top" Foreground="#FFB2B9C0"/>
+                    <Label x:Name="l_Ingreso_Razon" Content="Razon de ingreso" HorizontalAlignment="Left" Margin="10,217,0,0" VerticalAlignment="Top" Foreground="#FFB2B9C0"/>
+                    <TextBox x:Name="tB_Ingreso_Nombre" PreviewTextInput="TextInputValidation" TabIndex="0" HorizontalAlignment="Left" Height="23" Margin="136,13,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="144" Background="#FF455A6D" Foreground="#FFB2B9C0"/>
+                    <TextBox x:Name="tB_Ingreso_Apellido" PreviewTextInput="TextInputValidation" TabIndex="1" HorizontalAlignment="Left" Height="23" Margin="136,49,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="144" Background="#FF455A6D" Foreground="#FFB2B9C0"/>
+                    <ComboBox x:Name="cB_Ingreso_Sangre" TabIndex="6" HorizontalAlignment="Left" Margin="136,176,0,0" VerticalAlignment="Top" Width="144" Background="#FF787878" BorderBrush="#FF3E3E3E" Foreground="#FF3E3E3E">
+                        <ComboBoxItem Content="Cualquiera"/>
+                        <ComboBoxItem Content="O-"/>
+                        <ComboBoxItem Content="O+"/>
+                        <ComboBoxItem Content="A-"/>
+                        <ComboBoxItem Content="A+"/>
+                        <ComboBoxItem Content="B-"/>
+                        <ComboBoxItem Content="B+"/>
+                        <ComboBoxItem Content="AB-"/>
+                        <ComboBoxItem Content="AB+"/>
+                    </ComboBox>
+                    <TextBox x:Name="tB_Ingreso_Razon" TabIndex="7" HorizontalAlignment="Left" Height="88" Margin="136,219,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="169" Background="#FF455A6D" Foreground="#FFB2B9C0"/>
+                    <ListView x:Name="lV_Pacientes" TabIndex="10" Margin="409,29,10,51.667" Background="#FF455A6D" Foreground="#FFB2B9C0">
+                        <ListView.View>
+                            <GridView>
+                                <GridViewColumn Width="100" DisplayMemberBinding="{Binding nombre}">
+                                    <GridViewColumnHeader Background="#FF455A6D" Content="Nombre" x:Name="colName" Click="SortByName" Foreground="#FFB2B9C0"/>
+                                </GridViewColumn>
+                                <GridViewColumn Width="100" DisplayMemberBinding="{Binding apellido}">
+                                    <GridViewColumnHeader Background="#FF455A6D" Content="Apellido" Click="SortByLastName" Foreground="#FFB2B9C0"/>
+                                </GridViewColumn>
+                                <GridViewColumn Width="100" DisplayMemberBinding="{Binding dpi}">
+                                    <GridViewColumnHeader Background="#FF455A6D" Content="DPI" Click="SortByDPI" Foreground="#FFB2B9C0" />
+                                </GridViewColumn>
+                                <GridViewColumn Width="75" DisplayMemberBinding="{Binding edad}">
+                                    <GridViewColumnHeader Background="#FF455A6D" Content="Edad" Click="SortByEdad" Foreground="#FFB2B9C0"/>
+                                </GridViewColumn>
+                                <GridViewColumn Width="100" DisplayMemberBinding="{Binding sangreS}">
+                                    <GridViewColumnHeader Background="#FF455A6D" Content="Tipo de Sangre" Foreground="#FFB2B9C0"/>
+                                </GridViewColumn>
+                                <GridViewColumn Width="135" DisplayMemberBinding="{Binding razon}">
+                                    <GridViewColumnHeader Background="#FF455A6D" Content="Razon de Ingreso" Click="SortByRazon" Foreground="#FFB2B9C0"/>
+                                </GridViewColumn>
+                            </GridView>
+                        </ListView.View>
+                    </ListView>
+                    <Button x:Name="btn_Ingresar" Content="Ingresar" TabIndex="8" HorizontalAlignment="Left" Margin="78,329,0,0" Width="75" Click="btn_Ingresar_Click" Height="24" VerticalAlignment="Top" Background="#FF455A6D" Foreground="#FFB2B9C0"/>
+                    <Button x:Name="btn_Buscar" Content="Buscar" TabIndex="9" HorizontalAlignment="Left" Margin="205,329,0,0" Width="75" Click="btn_Buscar_Click" Height="24" VerticalAlignment="Top" Background="#FF455A6D" Foreground="#FFB2B9C0"/>
+                    <Label x:Name="l_Ingreso_Pacientes" Content="Pacientes" HorizontalAlignment="Left" Margin="683,1,0,0" VerticalAlignment="Top" Foreground="#FFB2B9C0"/>
+                    <Button x:Name="btn_Ingreso_Eliminar" TabIndex="12" Content="Eliminar Paciente" Background="#FF455A6D" Margin="0,326,10.667,0" VerticalAlignment="Top" Height="25" Click="btn_Ingreso_Eliminar_Click" HorizontalAlignment="Right" Width="101" Foreground="#FFB2B9C0"/>
+                    <Label x:Name="l_HashCode" Content="" HorizontalAlignment="Left" Margin="454,281,0,0" VerticalAlignment="Top" Width="235"/>
+                    <Label x:Name="l_DPI" Content="DPI" HorizontalAlignment="Left" Margin="10,90,0,0" VerticalAlignment="Top" Foreground="#FFB2B9C0"/>
+                    <TextBox x:Name="tB_DPI" TabIndex="2" HorizontalAlignment="Left" Height="23" Margin="136,89,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="144" Background="#FF455A6D" Foreground="#FFB2B9C0" PreviewTextInput="TextInputValidationNumbers"/>
+                    <Label x:Name="l_FechaNac" Content="Fecha de Nacimiento" HorizontalAlignment="Left" Margin="10,136,0,0" VerticalAlignment="Top" Foreground="#FFB2B9C0"/>
+                    <Label x:Name="l_Year" Content="Año" HorizontalAlignment="Left" Margin="313,112,0,0" VerticalAlignment="Top" Foreground="#FFB2B9C0"/>
+                    <Label x:Name="l_Dia" Content="Dia" HorizontalAlignment="Left" Margin="136,112,0,0" VerticalAlignment="Top" Foreground="#FFB2B9C0"/>
+                    <Label x:Name="l_Mes" Content="Mes" HorizontalAlignment="Left" Margin="223,112,0,0" VerticalAlignment="Top" Foreground="#FFB2B9C0"/>
+                    <TextBox x:Name="tB_Year" TabIndex="5" HorizontalAlignment="Left" Height="23" Margin="307,140,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="45" Background="#FF455A6D" Foreground="#FFB2B9C0" PreviewTextInput="TextInputValidationNumbers"/>
+                    <ComboBox x:Name="cB_Mes" TabIndex="4" HorizontalAlignment="Left" Margin="191,140,0,0" VerticalAlignment="Top" Width="99" Foreground="Black" Background="#FF787878">
+                        <ComboBoxItem Content="Enero"/>
+                        <ComboBoxItem Content="Febrero"/>
+                        <ComboBoxItem Content="Marzo"/>
+                        <ComboBoxItem Content="Abril"/>
+                        <ComboBoxItem Content="Mayo"/>
+                        <ComboBoxItem Content="Junio"/>
+                        <ComboBoxItem Content="Julio"/>
+                        <ComboBoxItem Content="Agosto"/>
+                        <ComboBoxItem Content="Septiembre"/>
+                        <ComboBoxItem Content="Octubre"/>
+                        <ComboBoxItem Content="Noviembre"/>
+                        <ComboBoxItem Content="Diciembre"/>
+                    </ComboBox>
+                    <ComboBox x:Name="cB_Dia" TabIndex="3" Foreground="Black" HorizontalAlignment="Left" Margin="136,140,0,0" VerticalAlignment="Top" Width="45" Background="#FF787878">
+                        <ComboBoxItem Content="1"/>
+                        <ComboBoxItem Content="2"/>
+                        <ComboBoxItem Content="3"/>
+                        <ComboBoxItem Content="4"/>
+                        <ComboBoxItem Content="5"/>
+                        <ComboBoxItem Content="6"/>
+                        <ComboBoxItem Content="7"/>
+                        <ComboBoxItem Content="8"/>
+                        <ComboBoxItem Content="9"/>
+                        <ComboBoxItem Content="10"/>
+                        <ComboBoxItem Content="11"/>
+                        <ComboBoxItem Content="12"/>
+                        <ComboBoxItem Content="13"/>
+                        <ComboBoxItem Content="14"/>
+                        <ComboBoxItem Content="15"/>
+                        <ComboBoxItem Content="16"/>
+                        <ComboBoxItem Content="17"/>
+                        <ComboBoxItem Content="18"/>
+                        <ComboBoxItem Content="19"/>
+                        <ComboBoxItem Content="20"/>
+                        <ComboBoxItem Content="21"/>
+                        <ComboBoxItem Content="22"/>
+                        <ComboBoxItem Content="23"/>
+                        <ComboBoxItem Content="24"/>
+                        <ComboBoxItem Content="25"/>
+                        <ComboBoxItem Content="26"/>
+                        <ComboBoxItem Content="27"/>
+                        <ComboBoxItem Content="28"/>
+                        <ComboBoxItem Content="29"/>
+                        <ComboBoxItem Content="30"/>
+                        <ComboBoxItem Content="31"/>
+                    </ComboBox>
+                </Grid>
+            </TabItem>
+            <TabItem Header="Asistencia Pacientes">
+                <Grid Background="#FF2E4253">
+                    <ListView x:Name="lV_AsistPacientes" TabIndex="10" Margin="391,15,27.667,65.667" Background="#FF455A6D" Foreground="#FFB2B9C0">
+                        <ListView.View>
+                            <GridView>
+                                <GridViewColumn Width="100" DisplayMemberBinding="{Binding nombre}">
+                                    <GridViewColumnHeader Background="#FF455A6D" Content="Nombre" Click="SortByName" Foreground="#FFB2B9C0"/>
+                                </GridViewColumn>
+                                <GridViewColumn Width="100" DisplayMemberBinding="{Binding apellido}">
+                                    <GridViewColumnHeader Background="#FF455A6D" Content="Apellido" Click="SortByLastName" Foreground="#FFB2B9C0"/>
+                                </GridViewColumn>
+                                <GridViewColumn Width="100" DisplayMemberBinding="{Binding dpi}">
+                                    <GridViewColumnHeader Background="#FF455A6D" Content="DPI" Click="SortByDPI" Foreground="#FFB2B9C0" />
+                                </GridViewColumn>
+                                <GridViewColumn Width="75" DisplayMemberBinding="{Binding edad}">
+                                    <GridViewColumnHeader Background="#FF455A6D" Content="Edad" Click="SortByEdad" Foreground="#FFB2B9C0"/>
+                                </GridViewColumn>
+                                <GridViewColumn Width="100" DisplayMemberBinding="{Binding sangreS}">
+                                    <GridViewColumnHeader Background="#FF455A6D" Content="Tipo de Sangre" Foreground="#FFB2B9C0"/>
+                                </GridViewColumn>
+                                <GridViewColumn Width="135" DisplayMemberBinding="{Binding razon}">
+                                    <GridViewColumnHeader Background="#FF455A6D" Content="Razon de Ingreso" Click="SortByRazon" Foreground="#FFB2B9C0"/>
+                                </GridViewColumn>
+                            </GridView>
+                        </ListView.View>
+                    </ListView>
+                    <GroupBox x:Name="gB_AsistPacientes" Header="Ingresar Asistencia" HorizontalAlignment="Left" Margin="10,23,0,0" VerticalAlignment="Top" Height="282" Width="339" Foreground="#FFB2B9C0">
+                        <Grid HorizontalAlignment="Left" Height="321" VerticalAlignment="Top" Width="329" Margin="0,0,-1.667,-13.667">
+                            <Label x:Name="l_AsistPacientes_Info" Content="Elige a un paciente para ingresar asistencia." HorizontalAlignment="Left" Margin="6,0,0,0" VerticalAlignment="Top" Width="319" Foreground="#FFB2B9C0"/>
+                            <Label x:Name="l_AsistPacientes_Fecha" Content="Fecha" HorizontalAlignment="Left" Margin="2,56,0,0" VerticalAlignment="Top" Foreground="#FFB2B9C0"/>
+                            <TextBox x:Name="tB_AsistPacientes_Year" HorizontalAlignment="Left" Height="23" Margin="265,58,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="49" Background="#FF455A6D" Foreground="#FFB2B9C0" PreviewTextInput="TextInputValidationNumbers"/>
+                            <ComboBox x:Name="cB_AsistPacientes_Dia" HorizontalAlignment="Left" Margin="88,59,0,0" VerticalAlignment="Top" Width="45">
+                                <ComboBoxItem Content="1"/>
+                                <ComboBoxItem Content="2"/>
+                                <ComboBoxItem Content="3"/>
+                                <ComboBoxItem Content="4"/>
+                                <ComboBoxItem Content="5"/>
+                                <ComboBoxItem Content="6"/>
+                                <ComboBoxItem Content="7"/>
+                                <ComboBoxItem Content="8"/>
+                                <ComboBoxItem Content="9"/>
+                                <ComboBoxItem Content="10"/>
+                                <ComboBoxItem Content="11"/>
+                                <ComboBoxItem Content="12"/>
+                                <ComboBoxItem Content="13"/>
+                                <ComboBoxItem Content="14"/>
+                                <ComboBoxItem Content="15"/>
+                                <ComboBoxItem Content="16"/>
+                                <ComboBoxItem Content="17"/>
+                                <ComboBoxItem Content="18"/>
+                                <ComboBoxItem Content="19"/>
+                                <ComboBoxItem Content="20"/>
+                                <ComboBoxItem Content="21"/>
+                                <ComboBoxItem Content="22"/>
+                                <ComboBoxItem Content="23"/>
+                                <ComboBoxItem Content="24"/>
+                                <ComboBoxItem Content="25"/>
+                                <ComboBoxItem Content="26"/>
+                                <ComboBoxItem Content="27"/>
+                                <ComboBoxItem Content="28"/>
+                                <ComboBoxItem Content="29"/>
+                                <ComboBoxItem Content="30"/>
+                                <ComboBoxItem Content="31"/>
+                            </ComboBox>
+                            <ComboBox x:Name="cB_AsistPacientes_Mes" HorizontalAlignment="Left" Margin="142,59,0,0" VerticalAlignment="Top" Width="110">
+                                <ComboBoxItem Content="Enero"/>
+                                <ComboBoxItem Content="Febrero"/>
+                                <ComboBoxItem Content="Marzo"/>
+                                <ComboBoxItem Content="Abril"/>
+                                <ComboBoxItem Content="Mayo"/>
+                                <ComboBoxItem Content="Junio"/>
+                                <ComboBoxItem Content="Julio"/>
+                                <ComboBoxItem Content="Agosto"/>
+                                <ComboBoxItem Content="Septiembre"/>
+                                <ComboBoxItem Content="Octubre"/>
+                                <ComboBoxItem Content="Noviembre"/>
+                                <ComboBoxItem Content="Diciembre"/>
+                            </ComboBox>
+                            <Label x:Name="l_AsistPacientes_Dia" Content="Dia" HorizontalAlignment="Left" Margin="95,37,0,0" VerticalAlignment="Top" Foreground="#FFB2B9C0"/>
+                            <Label x:Name="l_AsistPacientes_Mes" Content="Mes" HorizontalAlignment="Left" Margin="180,37,0,0" VerticalAlignment="Top" Foreground="#FFB2B9C0"/>
+                            <Label x:Name="l_AsistPacientes_Year" Content="Año" HorizontalAlignment="Left" Margin="274,37,0,0" VerticalAlignment="Top" Foreground="#FFB2B9C0"/>
+                            <Label x:Name="l_AsistPacientes_Observaciones" Content="Observaciones" HorizontalAlignment="Left" Margin="-2,105,0,0" VerticalAlignment="Top" Foreground="#FFB2B9C0"/>
+                            <TextBox x:Name="tB_AsistPacientes_Observaciones" HorizontalAlignment="Left" Height="97" Margin="88,109,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="228" Background="#FF455A6D" Foreground="#FFB2B9C0"/>
+                            <Button x:Name="btn_AsistPacientes_IngresarAsistencia" Content="Ingresar Asistencia" HorizontalAlignment="Left" Margin="106,225,0,0" VerticalAlignment="Top" Width="111" Background="#FF455A6D" Foreground="#FFB2B9C0" Click="btn_AsistPacientes_IngresarAsistencia_Click"/>
+                        </Grid>
+                    </GroupBox>
+                </Grid>
+            </TabItem>
+            <TabItem Header="Reportes Pacientes">
+                <Grid Background="#FF2E4253">
+                    <TabControl x:Name="tabControl_Reportes" Margin="0,0,-0.333,-0.333" Background="#FF2E4253">
+                        <TabItem Header="Por Fecha de Nacimiento">
+                            <Grid Background="#FF2E4253">
+                                <Label x:Name="l_Rep_FechaNac" Content="Pacientes nacidos entre" HorizontalAlignment="Left" Margin="10,26,0,0" VerticalAlignment="Top" Foreground="#FFB2B9C0"/>
+                                <ComboBox x:Name="cB_Rep_Dia" HorizontalAlignment="Left" Margin="164,30,0,0" VerticalAlignment="Top" Width="45">
+                                    <ComboBoxItem Content="1"/>
+                                    <ComboBoxItem Content="2"/>
+                                    <ComboBoxItem Content="3"/>
+                                    <ComboBoxItem Content="4"/>
+                                    <ComboBoxItem Content="5"/>
+                                    <ComboBoxItem Content="6"/>
+                                    <ComboBoxItem Content="7"/>
+                                    <ComboBoxItem Content="8"/>
+                                    <ComboBoxItem Content="9"/>
+                                    <ComboBoxItem Content="10"/>
+                                    <ComboBoxItem Content="11"/>
+                                    <ComboBoxItem Content="12"/>
+                                    <ComboBoxItem Content="13"/>
+                                    <ComboBoxItem Content="14"/>
+                                    <ComboBoxItem Content="15"/>
+                                    <ComboBoxItem Content="16"/>
+                                    <ComboBoxItem Content="17"/>
+                                    <ComboBoxItem Content="18"/>
+                                    <ComboBoxItem Content="19"/>
+                                    <ComboBoxItem Content="20"/>
+                                    <ComboBoxItem Content="21"/>
+                                    <ComboBoxItem Content="22"/>
+                                    <ComboBoxItem Content="23"/>
+                                    <ComboBoxItem Content="24"/>
+                                    <ComboBoxItem Content="25"/>
+                                    <ComboBoxItem Content="26"/>
+                                    <ComboBoxItem Content="27"/>
+                                    <ComboBoxItem Content="28"/>
+                                    <ComboBoxItem Content="29"/>
+                                    <ComboBoxItem Content="30"/>
+                                    <ComboBoxItem Content="31"/>
+                                </ComboBox>
+                                <ComboBox x:Name="cB_Rep_Mes" HorizontalAlignment="Left" Margin="217,30,0,0" VerticalAlignment="Top" Width="120">
+                                    <ComboBoxItem Content="Enero"/>
+                                    <ComboBoxItem Content="Febrero"/>
+                                    <ComboBoxItem Content="Marzo"/>
+                                    <ComboBoxItem Content="Abril"/>
+                                    <ComboBoxItem Content="Mayo"/>
+                                    <ComboBoxItem Content="Junio"/>
+                                    <ComboBoxItem Content="Julio"/>
+                                    <ComboBoxItem Content="Agosto"/>
+                                    <ComboBoxItem Content="Septiembre"/>
+                                    <ComboBoxItem Content="Octubre"/>
+                                    <ComboBoxItem Content="Noviembre"/>
+                                    <ComboBoxItem Content="Diciembre"/>
+                                </ComboBox>
+                                <TextBox x:Name="tB_Rep_Year" HorizontalAlignment="Left" Height="23" Margin="344,30,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="59" PreviewTextInput="TextInputValidationNumbers" Background="#FF455A6D" Foreground="#FFB2B9C0"/>
+                                <Label x:Name="l_Rep_Dia" Content="Dia" HorizontalAlignment="Left" Margin="168,8,0,0" VerticalAlignment="Top" Foreground="#FFB2B9C0"/>
+                                <Label x:Name="l_Rep_Mes" Content="Mes" HorizontalAlignment="Left" Margin="254,8,0,0" VerticalAlignment="Top" Foreground="#FFB2B9C0"/>
+                                <Label x:Name="l_Rep_Year" Content="Año" HorizontalAlignment="Left" Margin="356,8,0,0" VerticalAlignment="Top" Foreground="#FFB2B9C0"/>
+                                <Label x:Name="l_Rep_Y" Content="Y" HorizontalAlignment="Left" Margin="412,27,0,0" VerticalAlignment="Top" Foreground="#FFB2B9C0"/>
+                                <ComboBox x:Name="cB_Rep_Dia2" HorizontalAlignment="Left" Margin="443,30,0,0" VerticalAlignment="Top" Width="45">
+                                    <ComboBoxItem Content="1"/>
+                                    <ComboBoxItem Content="2"/>
+                                    <ComboBoxItem Content="3"/>
+                                    <ComboBoxItem Content="4"/>
+                                    <ComboBoxItem Content="5"/>
+                                    <ComboBoxItem Content="6"/>
+                                    <ComboBoxItem Content="7"/>
+                                    <ComboBoxItem Content="8"/>
+                                    <ComboBoxItem Content="9"/>
+                                    <ComboBoxItem Content="10"/>
+                                    <ComboBoxItem Content="11"/>
+                                    <ComboBoxItem Content="12"/>
+                                    <ComboBoxItem Content="13"/>
+                                    <ComboBoxItem Content="14"/>
+                                    <ComboBoxItem Content="15"/>
+                                    <ComboBoxItem Content="16"/>
+                                    <ComboBoxItem Content="17"/>
+                                    <ComboBoxItem Content="18"/>
+                                    <ComboBoxItem Content="19"/>
+                                    <ComboBoxItem Content="20"/>
+                                    <ComboBoxItem Content="21"/>
+                                    <ComboBoxItem Content="22"/>
+                                    <ComboBoxItem Content="23"/>
+                                    <ComboBoxItem Content="24"/>
+                                    <ComboBoxItem Content="25"/>
+                                    <ComboBoxItem Content="26"/>
+                                    <ComboBoxItem Content="27"/>
+                                    <ComboBoxItem Content="28"/>
+                                    <ComboBoxItem Content="29"/>
+                                    <ComboBoxItem Content="30"/>
+                                    <ComboBoxItem Content="31"/>
+                                </ComboBox>
+                                <ComboBox x:Name="cB_Rep_Mes2" HorizontalAlignment="Left" Margin="496,30,0,0" VerticalAlignment="Top" Width="120">
+                                    <ComboBoxItem Content="Enero"/>
+                                    <ComboBoxItem Content="Febrero"/>
+                                    <ComboBoxItem Content="Marzo"/>
+                                    <ComboBoxItem Content="Abril"/>
+                                    <ComboBoxItem Content="Mayo"/>
+                                    <ComboBoxItem Content="Junio"/>
+                                    <ComboBoxItem Content="Julio"/>
+                                    <ComboBoxItem Content="Agosto"/>
+                                    <ComboBoxItem Content="Septiembre"/>
+                                    <ComboBoxItem Content="Octubre"/>
+                                    <ComboBoxItem Content="Noviembre"/>
+                                    <ComboBoxItem Content="Diciembre"/>
+                                </ComboBox>
+                                <TextBox x:Name="tB_Rep_Year2" HorizontalAlignment="Left" Height="23" Margin="623,30,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="59" PreviewTextInput="TextInputValidationNumbers" Background="#FF455A6D" Foreground="#FFB2B9C0"/>
+                                <Label x:Name="l_Rep_Dia2" Content="Dia" HorizontalAlignment="Left" Margin="447,8,0,0" VerticalAlignment="Top" Foreground="#FFB2B9C0"/>
+                                <Label x:Name="l_Rep_Mes2" Content="Mes" HorizontalAlignment="Left" Margin="533,8,0,0" VerticalAlignment="Top" Foreground="#FFB2B9C0"/>
+                                <Label x:Name="l_Rep_Year2" Content="Año" HorizontalAlignment="Left" Margin="635,8,0,0" VerticalAlignment="Top" Foreground="#FFB2B9C0"/>
+                                <Button x:Name="btn_Rep_BuscarFechaNac" Content="Buscar" HorizontalAlignment="Left" Margin="696,32,0,0" VerticalAlignment="Top" Width="75" Foreground="#FFB2B9C0" Background="#FF455A6D" Click="btn_Rep_BuscarFechaNac_Click"/>
+                                <ListView x:Name="lV_Rep_FechaNac" HorizontalAlignment="Left" Height="245" Margin="164,72,0,0" VerticalAlignment="Top" Width="652" Background="#FF455A6D" Foreground="#FFB2B9C0">
+                                    <ListView.View>
+                                        <GridView>
+                                            <GridViewColumn Header="Fecha Nacimiento" Width="135" DisplayMemberBinding="{Binding fechaNacS}"/>
+                                            <GridViewColumn Header="Nombres" Width="120" DisplayMemberBinding="{Binding nombre}"/>
+                                            <GridViewColumn Header="Apellidos" Width="120" DisplayMemberBinding="{Binding apellido}"/>
+                                            <GridViewColumn Header="Asistencia mas Reciente" Width="135" DisplayMemberBinding="{Binding asisReciente}"/>
+                                            <GridViewColumn Header="Cantidad de Asistencias" Width="135" DisplayMemberBinding="{Binding cantAsistencias}"/>
+                                        </GridView>
+                                    </ListView.View>
+                                </ListView>
+                            </Grid>
+                        </TabItem>
+                        <TabItem Header="Por Fecha de Asistencia">
+                            <Grid Background="#FF2E4253">
+                                <Label x:Name="l_Rep_FechaAsis" Content="Pacientes que asistieron el" HorizontalAlignment="Left" Margin="17,28,0,0" VerticalAlignment="Top" Foreground="#FFB2B9C0"/>
+                                <ComboBox x:Name="cB_Rep_FechaAsist_Day" HorizontalAlignment="Left" Margin="184,30,0,0" VerticalAlignment="Top" Width="45">
+                                    <ComboBoxItem Content="1"/>
+                                    <ComboBoxItem Content="2"/>
+                                    <ComboBoxItem Content="3"/>
+                                    <ComboBoxItem Content="4"/>
+                                    <ComboBoxItem Content="5"/>
+                                    <ComboBoxItem Content="6"/>
+                                    <ComboBoxItem Content="7"/>
+                                    <ComboBoxItem Content="8"/>
+                                    <ComboBoxItem Content="9"/>
+                                    <ComboBoxItem Content="10"/>
+                                    <ComboBoxItem Content="11"/>
+                                    <ComboBoxItem Content="12"/>
+                                    <ComboBoxItem Content="13"/>
+                                    <ComboBoxItem Content="14"/>
+                                    <ComboBoxItem Content="15"/>
+                                    <ComboBoxItem Content="16"/>
+                                    <ComboBoxItem Content="17"/>
+                                    <ComboBoxItem Content="18"/>
+                                    <ComboBoxItem Content="19"/>
+                                    <ComboBoxItem Content="20"/>
+                                    <ComboBoxItem Content="21"/>
+                                    <ComboBoxItem Content="22"/>
+                                    <ComboBoxItem Content="23"/>
+                                    <ComboBoxItem Content="24"/>
+                                    <ComboBoxItem Content="25"/>
+                                    <ComboBoxItem Content="26"/>
+                                    <ComboBoxItem Content="27"/>
+                                    <ComboBoxItem Content="28"/>
+                                    <ComboBoxItem Content="29"/>
+                                    <ComboBoxItem Content="30"/>
+                                    <ComboBoxItem Content="31"/>
+                                </ComboBox>
+                                <ComboBox x:Name="cB_Rep_FechaAsist_Month" HorizontalAlignment="Left" Margin="237,30,0,0" VerticalAlignment="Top" Width="120">
+                                    <ComboBoxItem Content="Enero"/>
+                                    <ComboBoxItem Content="Febrero"/>
+                                    <ComboBoxItem Content="Marzo"/>
+                                    <ComboBoxItem Content="Abril"/>
+                                    <ComboBoxItem Content="Mayo"/>
+                                    <ComboBoxItem Content="Junio"/>
+                                    <ComboBoxItem Content="Julio"/>
+                                    <ComboBoxItem Content="Agosto"/>
+                                    <ComboBoxItem Content="Septiembre"/>
+                                    <ComboBoxItem Content="Octubre"/>
+                                    <ComboBoxItem Content="Noviembre"/>
+                                    <ComboBoxItem Content="Diciembre"/>
+                                </ComboBox>
+                                <TextBox x:Name="tB_Rep_FechaAsist_Year" HorizontalAlignment="Left" Height="23" Margin="364,30,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="71" PreviewTextInput="TextInputValidationNumbers" Background="#FF455A6D" Foreground="#FFB2B9C0"/>
+                                <Label x:Name="l_Rep_FechaAsis_Dia" Content="Dia" HorizontalAlignment="Left" Margin="189,8,0,0" VerticalAlignment="Top" Foreground="#FFB2B9C0"/>
+                                <Label x:Name="l_Rep_FechaAsis_Mes" Content="Mes" HorizontalAlignment="Left" Margin="275,8,0,0" VerticalAlignment="Top" Foreground="#FFB2B9C0"/>
+                                <Label x:Name="l_Rep_FechaAsis_" Content="Año" HorizontalAlignment="Left" Margin="384,8,0,0" VerticalAlignment="Top" Foreground="#FFB2B9C0"/>
+                                <Button x:Name="btn_Rep_FechaAsist_Buscar" Content="Buscar" HorizontalAlignment="Left" Margin="449,31,0,0" VerticalAlignment="Top" Width="75" Foreground="#FFB2B9C0" BorderBrush="#FF939393" Background="#FF455A6D" Click="btn_Rep_FechaAsist_Buscar_Click"/>
+                                <ListView x:Name="lV_Rep_FechaAsis" HorizontalAlignment="Left" Height="245" Margin="164,72,0,0" VerticalAlignment="Top" Width="652" Background="#FF455A6D" Foreground="#FFB2B9C0">
+                                    <ListView.View>
+                                        <GridView>
+                                            <GridViewColumn Header="Fecha Nacimiento" Width="135" DisplayMemberBinding="{Binding fechaNacS}"/>
+                                            <GridViewColumn Header="Nombres" Width="120" DisplayMemberBinding="{Binding nombre}"/>
+                                            <GridViewColumn Header="Apellidos" Width="120" DisplayMemberBinding="{Binding apellido}"/>
+                                            <GridViewColumn Header="Asistencia mas Reciente" Width="135" DisplayMemberBinding="{Binding asisReciente}"/>
+                                            <GridViewColumn Header="Cantidad de Asistencias" Width="135" DisplayMemberBinding="{Binding cantAsistencias}"/>
+                                        </GridView>
+                                    </ListView.View>
+                                </ListView>
+                            </Grid>
+                        </TabItem>
+                        <TabItem Header="Por Cantidad de Asistencia">
+                            <Grid Background="#FF2E4253">
+                                <ListView x:Name="lV_Rep_CantAsis" HorizontalAlignment="Left" Height="245" Margin="191,55,0,0" VerticalAlignment="Top" Width="652" Background="#FF455A6D" Foreground="#FFB2B9C0">
+                                    <ListView.View>
+                                        <GridView>
+                                            <GridViewColumn Header="Fecha Nacimiento" Width="135" DisplayMemberBinding="{Binding fechaNacS}"/>
+                                            <GridViewColumn Header="Nombres" Width="120" DisplayMemberBinding="{Binding nombre}"/>
+                                            <GridViewColumn Header="Apellidos" Width="120" DisplayMemberBinding="{Binding apellido}"/>
+                                            <GridViewColumn Header="Asistencia mas Reciente" Width="135" DisplayMemberBinding="{Binding asisReciente}"/>
+                                            <GridViewColumn Header="Cantidad de Asistencias" Width="135" DisplayMemberBinding="{Binding cantAsistencias}"/>
+                                        </GridView>
+                                    </ListView.View>
+                                </ListView>
+                                <Label x:Name="l_Rep_CantAsis_Info" Content="Pacientes que han asistido entre" HorizontalAlignment="Left" Margin="190,15,0,0" VerticalAlignment="Top" Foreground="#FFB2B9C0"/>
+                                <Label x:Name="l_Rep_CantAsis_Info2" Content="Y" HorizontalAlignment="Left" Margin="421,17,0,0" VerticalAlignment="Top" Foreground="#FFB2B9C0"/>
+                                <TextBox x:Name="tB_Rep_CantAsis_Cant0" HorizontalAlignment="Left" Height="23" Margin="369,17,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="39" Background="#FF455A6D" Foreground="#FFB2B9C0" PreviewTextInput="TextInputValidationNumbers"/>
+                                <TextBox x:Name="tB_Rep_CantAsis_Cant1" HorizontalAlignment="Left" Height="23" Margin="454,17,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="39" Background="#FF455A6D" Foreground="#FFB2B9C0" PreviewTextInput="TextInputValidationNumbers"/>
+                                <Button x:Name="btn_Rep_CantAsis_Buscar" Content="Buscar" HorizontalAlignment="Left" Margin="557,18,0,0" VerticalAlignment="Top" Width="75" Background="#FF455A6D" Foreground="#FFB2B9C0" Click="btn_Rep_CantAsis_Buscar_Click"/>
+                                <Label x:Name="l_Rep_CantAsis_Info3" Content="Veces" HorizontalAlignment="Left" Margin="505,15,0,0" VerticalAlignment="Top" Foreground="#FFB2B9C0"/>
+                            </Grid>
+                        </TabItem>
+                    </TabControl>
+                </Grid>
+            </TabItem>
+        </TabControl>
+
     </Grid>
 </Window>

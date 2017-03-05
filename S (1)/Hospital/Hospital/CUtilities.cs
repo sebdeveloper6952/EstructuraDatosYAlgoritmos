@@ -5,6 +5,7 @@ using Hospital;
 using System.Windows.Controls;
 using System.ComponentModel;
 using System.Reflection;
+using System.Windows.Data;
 
 namespace ControlVentas
 {
@@ -33,10 +34,10 @@ namespace ControlVentas
             return !rg.IsMatch(e);
         }
 
-        public static void FillListView(ListView lv, List<CPaciente> list)
+        public static void FillListView<T>(ListView lv, List<T> list)
         {
             lv.Items.Clear();
-            foreach(CPaciente p in list)
+            foreach (T p in list)
             {
                 lv.Items.Add(p);
             }

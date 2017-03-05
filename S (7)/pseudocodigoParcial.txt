@@ -1,0 +1,33 @@
+[] pokebola
+() raichu
+{} pikachu
+i pichu
+
+[({i})] estructura ordenada
+
+[})({i -> ordenar -> [({i}) -> estructura no completa
+
+stack(push '[')
+stack(push '(')
+al final el stack tendria dentro '[', lo cual indica que las partes no
+concuerdan.
+
+**********pseudocodigo*****************
+bool ValidarJueguete(List<CJuguete> list)
+{
+    foreach(CJuguete t in list)
+    {
+        if(t.tipo == ETIPO.izquierda)
+        {
+            stack.Push(t);
+        }
+        else if(t.tipo == ETIPO.derecha)
+        {
+	    CJuguete jug = stack.Peek();
+            if(t.nombre == jug.nombre)
+		stack.Pop();
+        }
+    }
+    return stack.Size() == 0;
+}
+

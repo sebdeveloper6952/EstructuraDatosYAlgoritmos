@@ -1,0 +1,186 @@
+﻿<Window x:Class="FeriaDeCiencia.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:FeriaDeCiencia"
+        mc:Ignorable="d"
+        Title="Feria Científica" Height="461.201" Width="808.895" Background="#FF003923" Loaded="Window_Loaded" ResizeMode="NoResize">
+    <Grid>
+        <TabControl x:Name="tC_Main" Background="#FF0E563B">
+            <TabItem x:Name="ti_RegistrarE" Header="Registrar Equipo" Foreground="Black" Background="#FFE5E5E5">
+                <Grid Background="#FF003923">
+                    <GroupBox x:Name="re_gB_RegE" Header="Registrar Equipo" HorizontalAlignment="Left" Height="272" Margin="12,10,0,0" VerticalAlignment="Top" Width="304" Foreground="#FFE7E7E7">
+                        <Grid Margin="0,0,-2,-13.333">
+                            <Label x:Name="re_l_NombreE" Content="Nombre de Equipo" HorizontalAlignment="Left" Margin="10,21,0,0" VerticalAlignment="Top" Foreground="#FFE7E7E7"/>
+                            <TextBox x:Name="re_tB_NombreE" HorizontalAlignment="Left" Height="23" Margin="127,23,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="160" Background="#FF0E563B" Foreground="#FFE7E7E7"/>
+                            <Label x:Name="re_l_FraseE" Content="Frase de Equipo" HorizontalAlignment="Left" Margin="10,77,0,0" VerticalAlignment="Top" Foreground="#FFE7E7E7"/>
+                            <TextBox x:Name="re_tB_FraseE" HorizontalAlignment="Left" Height="109" Margin="127,77,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="160" Background="#FF0E563B" Foreground="#FFE7E7E7"/>
+                            <Button x:Name="re_btn_RegE" Content="Registrar" HorizontalAlignment="Left" Margin="107,208,0,0" VerticalAlignment="Top" Height="25" Width="75" BorderBrush="{x:Null}" Foreground="#FFE7E7E7" Click="re_btn_RegE_Click">
+                                <Button.Style>
+                                    <Style TargetType="{x:Type Button}">
+                                        <Setter Property="Background" Value="#FF0E563B"/>
+                                        <Setter Property="Template">
+                                            <Setter.Value>
+                                                <ControlTemplate TargetType="{x:Type Button}">
+                                                    <Border Background="{TemplateBinding Background}">
+                                                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                                    </Border>
+                                                </ControlTemplate>
+                                            </Setter.Value>
+                                        </Setter>
+                                        <Style.Triggers>
+                                            <Trigger Property="IsMouseOver" Value="True">
+                                                <Setter Property="Background" Value="Red"/>
+                                            </Trigger>
+                                        </Style.Triggers>
+                                    </Style>
+                                </Button.Style>
+                            </Button>
+                        </Grid>
+                    </GroupBox>
+                    <GroupBox x:Name="re_gB_RegI" Header="Registrar Integrantes" HorizontalAlignment="Left" Height="388" Margin="359,6,0,0" VerticalAlignment="Top" Width="393" Foreground="#FFE7E7E7">
+                        <Grid Margin="0,0,-1.667,-13.333">
+                            <ListBox x:Name="re_lB_Equipos" HorizontalAlignment="Left" Height="152" Margin="10,37,0,0" VerticalAlignment="Top" Width="163" Background="#FF0E563B" Foreground="#FFE7E7E7" SelectionChanged="re_lB_Equipos_SelectionChanged"/>
+                            <Label x:Name="re_l_Equipos" Content="Equipos" HorizontalAlignment="Left" Margin="32,11,0,0" VerticalAlignment="Top" Foreground="#FFE7E7E7"/>
+                            <ListBox x:Name="re_lB_Integrantes" HorizontalAlignment="Left" Height="152" Margin="210,37,0,0" VerticalAlignment="Top" Width="163" Background="#FF0E563B" Foreground="#FFE7E7E7"/>
+                            <Label x:Name="re_l_Integrantes" Content="Integrantes" HorizontalAlignment="Left" Margin="238,5,0,0" VerticalAlignment="Top" Foreground="#FFE7E7E7"/>
+                            <GroupBox x:Name="re_gB_NuevoIntegrante" Header="Nuevo Integrante" HorizontalAlignment="Left" Height="174" Margin="10,194,0,0" VerticalAlignment="Top" Width="363">
+                                <Grid Margin="0,0,-1.667,-13.667">
+                                    <Label x:Name="re_l_NuevoNombre" Content="Nombre" HorizontalAlignment="Left" Margin="10,9,0,0" VerticalAlignment="Top" Foreground="#FFE7E7E7"/>
+                                    <Label x:Name="re_l_NuevoCarne" Content="No. Carné" HorizontalAlignment="Left" Margin="10,44,0,0" VerticalAlignment="Top" Foreground="#FFE7E7E7"/>
+                                    <Label x:Name="re_l_NuevoCarrera" Content="Carrera" HorizontalAlignment="Left" Margin="10,77,0,0" VerticalAlignment="Top" Foreground="#FFE7E7E7"/>
+                                    <TextBox x:Name="re_tB_NuevoNombre" HorizontalAlignment="Left" Height="23" Margin="168,12,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="145" Background="#FF0E563B" Foreground="#FFE7E7E7" PreviewTextInput="TextValidationLetters"/>
+                                    <TextBox x:Name="re_tB_NuevoCarne" HorizontalAlignment="Left" Height="23" Margin="168,47,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="145" Background="#FF0E563B" Foreground="#FFE7E7E7" PreviewTextInput="TextValidationNumbers"/>
+                                    <TextBox x:Name="re_tB_NuevoCarrera" HorizontalAlignment="Left" Height="23" Margin="168,81,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="145" Background="#FF0E563B" Foreground="#FFE7E7E7" PreviewTextInput="TextValidationLetters"/>
+                                    <Button x:Name="re_btn_NuevoRegistrar" Content="Registrar" HorizontalAlignment="Left" Margin="138,119,0,0" VerticalAlignment="Top" Width="75" Height="25" Foreground="#FFE7E7E7" Click="re_btn_NuevoRegistrar_Click">
+                                        <Button.Style>
+                                            <Style TargetType="{x:Type Button}">
+                                                <Setter Property="Background" Value="#FF0E563B"/>
+                                                <Setter Property="Template">
+                                                    <Setter.Value>
+                                                        <ControlTemplate TargetType="{x:Type Button}">
+                                                            <Border Background="{TemplateBinding Background}">
+                                                                <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                                            </Border>
+                                                        </ControlTemplate>
+                                                    </Setter.Value>
+                                                </Setter>
+                                                <Style.Triggers>
+                                                    <Trigger Property="IsMouseOver" Value="True">
+                                                        <Setter Property="Background" Value="Red"/>
+                                                    </Trigger>
+                                                </Style.Triggers>
+                                            </Style>
+                                        </Button.Style>
+                                    </Button>
+                                </Grid>
+                            </GroupBox>
+                        </Grid>
+                    </GroupBox>
+                </Grid>
+            </TabItem>
+            <TabItem x:Name="ti_RegistrarP" Header="Registrar Proyecto" Foreground="Black">
+                <Grid Background="#FF003923">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="51*"/>
+                        <ColumnDefinition Width="745*"/>
+                    </Grid.ColumnDefinitions>
+                    <Label x:Name="rp_l_EscogeEquipo" Content="Escoge el Equipo:" HorizontalAlignment="Left" Margin="17,18,0,0" VerticalAlignment="Top" Width="105" Foreground="#FFE7E7E7" Grid.ColumnSpan="2"/>
+                    <ListBox x:Name="rp_lB_Equipos" HorizontalAlignment="Left" Height="176" Margin="14,49,0,0" VerticalAlignment="Top" Width="138" Background="#FF0E563B" Foreground="#FFE7E7E7" SelectionChanged="rp_lB_Equipos_SelectionChanged" Grid.ColumnSpan="2"/>
+                    <GroupBox x:Name="rp_gB_RegPro" Header="Datos del Proyecto" HorizontalAlignment="Left" Height="376" Margin="136.333,18,0,0" VerticalAlignment="Top" Width="599" Foreground="#FFE7E7E7" Grid.Column="1">
+                        <Grid Margin="0,0,-2.333,-13.333">
+                            <Label x:Name="rp_l_NombrePro" Content="Nombre" HorizontalAlignment="Left" Margin="14,13,0,0" VerticalAlignment="Top" Foreground="#FFE7E7E7"/>
+                            <Label x:Name="rp_l_DescrPro" Content="Descripción" HorizontalAlignment="Left" Margin="10,73,0,0" VerticalAlignment="Top" Foreground="#FFE7E7E7"/>
+                            <Label x:Name="rp_l_Cat" Content="Categoría" HorizontalAlignment="Left" Margin="14,210,0,0" VerticalAlignment="Top" Foreground="#FFE7E7E7"/>
+                            <Label x:Name="rp_l_PalClave0" Content="Palabras clave: introduce hasta 5 palabras" HorizontalAlignment="Left" Margin="14,258,0,0" VerticalAlignment="Top" Foreground="#FFE7E7E7" Height="25" Width="234"/>
+                            <Label x:Name="rp_l_PalClave1" Content="separadas por un espacio." HorizontalAlignment="Left" Margin="14,272,0,0" VerticalAlignment="Top" Foreground="#FFE7E7E7" Height="25" Width="234"/>
+                            <TextBox x:Name="rp_tB_NombrePro" HorizontalAlignment="Left" Height="23" Margin="113,17,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="135" Background="#FF0E563B" Foreground="#FFE7E7E7"/>
+                            <TextBox x:Name="rp_tB_DescPro" HorizontalAlignment="Left" Height="106" Margin="113,77,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="184" Background="#FF0E563B" Foreground="#FFE7E7E7"/>
+                            <ComboBox x:Name="rp_cB_Cat" HorizontalAlignment="Left" Margin="113,214,0,0" VerticalAlignment="Top" Width="135">
+                                <ComboBoxItem Content="Salud"/>
+                                <ComboBoxItem Content="Comunicación"/>
+                                <ComboBoxItem Content="Educación"/>
+                            </ComboBox>
+                            <TextBox x:Name="rp_tB_PalCla" HorizontalAlignment="Left" Height="23" Margin="85,305,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="135" Background="#FF0E563B" Foreground="#FFE7E7E7"/>
+                            <Button x:Name="rp_btn_RegistrarPro" Content="Registrar" HorizontalAlignment="Left" Margin="274,324,0,0" VerticalAlignment="Top" Width="75" Height="25" Foreground="#FFE7E7E7" BorderBrush="#FFE15D5D" Click="rp_btn_RegistrarPro_Click">
+                                <Button.Style>
+                                    <Style TargetType="{x:Type Button}">
+                                        <Setter Property="Background" Value="#FF0E563B"/>
+                                        <Setter Property="Template">
+                                            <Setter.Value>
+                                                <ControlTemplate TargetType="{x:Type Button}">
+                                                    <Border Background="{TemplateBinding Background}">
+                                                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                                    </Border>
+                                                </ControlTemplate>
+                                            </Setter.Value>
+                                        </Setter>
+                                        <Style.Triggers>
+                                            <Trigger Property="IsMouseOver" Value="True">
+                                                <Setter Property="Background" Value="Red"/>
+                                            </Trigger>
+                                        </Style.Triggers>
+                                    </Style>
+                                </Button.Style>
+                            </Button>
+                            <Image HorizontalAlignment="Left" Height="133" Margin="336,13,0,0" VerticalAlignment="Top" Width="236" Source="Resources/science-fair2.png"/>
+                        </Grid>
+                    </GroupBox>
+                    <ListBox x:Name="rp_lB_ProEquiSel" HorizontalAlignment="Left" Height="81" Margin="14,288,0,0" VerticalAlignment="Top" Width="138" Foreground="#FFE7E7E7" Background="#FF0E563B" Grid.ColumnSpan="2"/>
+                    <Label x:Name="rp_l_ProEquiSel" Content="Proyectos del Equipo:" HorizontalAlignment="Left" Margin="7,256,0,0" VerticalAlignment="Top" Width="161" Foreground="#FFE7E7E7" Grid.ColumnSpan="2"/>
+                </Grid>
+            </TabItem>
+            <TabItem x:Name="ti_BuscarP" Header="Buscar Proyecto" Foreground="Black">
+                <Grid Background="#FF003923">
+                    <GroupBox x:Name="bp_gB_Buscar" Header="Buscar Proyecto" HorizontalAlignment="Left" Height="143" Margin="0,10,0,0" VerticalAlignment="Top" Width="198" Foreground="#FFE7E7E7">
+                        <Grid Margin="0,0,-2,-2.333">
+                            <Label x:Name="bp_l_PalCla" Content="Palabras Clave" HorizontalAlignment="Left" Margin="45,6,0,0" VerticalAlignment="Top" Foreground="#FFE7E7E7"/>
+                            <TextBox x:Name="bp_tB_PalCla" HorizontalAlignment="Left" Height="23" Margin="14,38,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="148" Background="#FF0E563B" Foreground="#FFE7E7E7"/>
+                            <Button x:Name="bp_btn_Buscar" Content="Buscar" HorizontalAlignment="Left" Margin="55,79,0,0" VerticalAlignment="Top" Height="25" Width="75" Foreground="#FFE7E7E7" Click="bp_btn_Buscar_Click">
+                                <Button.Style>
+                                    <Style TargetType="{x:Type Button}">
+                                        <Setter Property="Background" Value="#FF0E563B"/>
+                                        <Setter Property="Template">
+                                            <Setter.Value>
+                                                <ControlTemplate TargetType="{x:Type Button}">
+                                                    <Border Background="{TemplateBinding Background}">
+                                                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                                    </Border>
+                                                </ControlTemplate>
+                                            </Setter.Value>
+                                        </Setter>
+                                        <Style.Triggers>
+                                            <Trigger Property="IsMouseOver" Value="True">
+                                                <Setter Property="Background" Value="Red"/>
+                                            </Trigger>
+                                        </Style.Triggers>
+                                    </Style>
+                                </Button.Style>
+                            </Button>
+                        </Grid>
+                    </GroupBox>
+                    <GroupBox x:Name="bp_gB_Resultados" Header="Resultados" HorizontalAlignment="Left" Height="384" Margin="210,10,0,0" VerticalAlignment="Top" Width="148" Foreground="#FFE7E7E7">
+                        <Grid Margin="0,0,-2,-1.667">
+                            <ListBox x:Name="bp_lB_Pro" HorizontalAlignment="Left" Height="362" VerticalAlignment="Top" Width="139" Background="#FF0E563B" Foreground="#FFE7E7E7" Margin="-2,0,0,0" SelectionChanged="bp_lB_Pro_SelectionChanged"/>
+                        </Grid>
+                    </GroupBox>
+                    <GroupBox x:Name="bp_gB_InfoPro" Header="Información del Proyecto Seleccionado" HorizontalAlignment="Left" Height="384" Margin="369,10,0,0" VerticalAlignment="Top" Width="417" Foreground="#FFE7E7E7">
+                        <Grid Margin="0,0,-1.667,-13.333">
+                            <Image x:Name="bp_img_ImgPro" HorizontalAlignment="Left" Height="115" Margin="115,10,0,0" VerticalAlignment="Top" Width="197" Source="/Resources/science-fair2.png"/>
+                            <Label x:Name="bp_l_NombrePro" Content="Nombre:" HorizontalAlignment="Left" Margin="18,130,0,0" VerticalAlignment="Top" Foreground="#FFE7E7E7"/>
+                            <Label x:Name="bp_l_IntegrantesPro" Content="Integrantes" HorizontalAlignment="Left" Margin="287,194,0,0" VerticalAlignment="Top" Foreground="#FFE7E7E7"/>
+                            <Label x:Name="bp_l_CategoriaPro" Content="Categoría:" HorizontalAlignment="Left" Margin="18,166,0,0" VerticalAlignment="Top" Foreground="#FFE7E7E7"/>
+                            <Label x:Name="bp_l_DescripcionPro" Content="Descripción:" HorizontalAlignment="Left" Margin="18,194,0,0" VerticalAlignment="Top" Foreground="#FFE7E7E7"/>
+                            <TextBox x:Name="bp_tB_NombrePro" IsReadOnly="True" HorizontalAlignment="Left" Height="23" Margin="120,130,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="148" Background="#FF0E563B" Foreground="#FFE7E7E7"/>
+                            <TextBox x:Name="bp_tB_CatPro" IsReadOnly="True" HorizontalAlignment="Left" Height="23" Margin="120,168,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="148" Background="#FF0E563B" Foreground="#FFE7E7E7"/>
+                            <TextBox x:Name="bp_tB_DescPro" IsReadOnly="True" HorizontalAlignment="Left" Height="131" Margin="20,217,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="206" Background="#FF0E563B" Foreground="#FFE7E7E7"/>
+                            <ListBox x:Name="bp_lB_Integrantes" HorizontalAlignment="Left" Height="131" Margin="255,217,0,0" VerticalAlignment="Top" Width="129" Background="#FF0E563B" Foreground="#FFE7E7E7"/>
+                        </Grid>
+                    </GroupBox>
+                </Grid>
+            </TabItem>
+        </TabControl>
+
+    </Grid>
+</Window>

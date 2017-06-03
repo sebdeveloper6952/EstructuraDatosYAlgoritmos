@@ -1,0 +1,9 @@
+ALGORTIMO enOrden
+
+INICIO
+  SI(nodoActual.hijoIzquierdo !=  null) ENTONCES
+    visitar(nodoActual.hijoIzquierdo)
+  visitar(nodoActual)
+  SI(nodoActual.hijoDerecho !=  null) ENTONCES
+    visitar(nodoActual.hijoDerecho)
+FIN

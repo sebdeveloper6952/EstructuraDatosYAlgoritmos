@@ -1,0 +1,42 @@
+ALGORITMO Insertar
+
+INPUT
+  CPaciente paciente, CNodoArbolBinario nodoActual
+VARIABLES
+  CNodoArbolBinario nuevoNodo, padre
+
+INICIO
+  nuevoNodo = CrearNodo(paciente, null, null, null);
+  SI(raiz == null) ENTONCES
+  INICIO
+    raiz = nuevoNodo
+  FIN
+  SINO
+  INICIO
+    SI(paciente.clave > nodoActual.dato.clave)
+    INICIO
+      SI(nodoActual.derecho == null) ENTONCES
+      INICIO
+        nodoActual.derecho = nuevoNodo
+        nuevoNodo.padre = nodoActual
+      FIN
+      SINO
+      INICIO
+        Insertar(paciente, nodoActual.derecho)
+      FIN
+    FIN
+    SINO
+    SI(nodoActual.izquierdo == null) ENTONCES
+      INICIO
+        nodoActual.izquierdo = nuevoNodo
+        nuevoNodo.padre = nodoActual
+      FIN
+      SINO
+      INICIO
+        Insertar(paciente, nodoActual.izquierdo)
+      FIN
+    INICIO
+      // buscar en el arbol izquierdo
+    FIN
+  FIN
+FIN

@@ -1,0 +1,35 @@
+public void Insertar(CPaciente p, CNodoArbolBinario nodoActual)
+{
+	if(raiz == null)
+	{
+		CNodoArbolBinario nuevoNodo = new CNodoArbolBinario(p, null, null, null);
+		raiz = nuevoNodo;
+	}
+	else
+	{
+		if(p.clave > nodoActual.clave)
+		{
+		  if(nodoActual.derecho == null)
+		  {
+		    nodoActual.derecho = nuevoNodo;
+		    nuevoNodo.padre = nodoActual;
+		  }
+		  else
+		  {
+		    Insertar(p, nodoActual.derecho);
+		  }
+		}
+		else
+		{
+		  if(nodoActual.izquierdo == null)
+		  {
+		    nodoActual.izquierdo = nuevoNodo;
+		    nuevoNodo.padre = nodoActual;
+		  }
+		  else
+		  {
+		    Insertar(p, nodoActual.izquierdo);
+		  }
+		}
+	}
+}

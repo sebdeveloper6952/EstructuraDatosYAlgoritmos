@@ -1,0 +1,24 @@
+ALGORTIMO porNiveles
+
+VARIABLES
+  COLA : cola
+
+INICIO
+  SI !(nodoActual.visitado) ENTONCES
+  INICIO
+    cola.Enqueue(nodoActual)
+    nodoActual.visitado = true
+  FIN
+  SI (nodoActual.hijoIzquierdo != null) ENTONCES
+  INICIO
+    cola.Enqueue(nodoActual.hijoIzquierdo)
+    nodoActual.hijoIzquierdo.visitado = true
+    porNiveles(nodoActual.hijoIzquierdo)
+  FIN
+  SI (nodoActual.hijoDerecho != null) ENTONCES
+  INICIO
+    cola.Enqueue(nodoActual.hijoDerecho)
+    nodoActual.hijoDerecho.visitado = true
+    porNiveles(nodoActual.hijoDerecho)
+  FIN
+FIN

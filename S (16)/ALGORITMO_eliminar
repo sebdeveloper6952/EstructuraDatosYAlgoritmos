@@ -1,0 +1,27 @@
+ALGORITMO eliminar(CNodo nodoAEliminar)
+
+INPUT nodoAEliminar
+VARIABLES
+  CNodo : padre, hijo
+
+INICIO
+  SI(nodoAEliminar no tiene hijos) ENTONCES
+  INICIO
+    eliminar(nodoAEliminar)
+  FIN
+  SI(nodoAEliminar tiene 1 hijo) ENTONCES
+  INICIO
+    padre = nodoAEliminar.padre
+    hijo = nodoAEliminar.unicoHijo
+    SI(nodoAEliminar es hijo izquierdo) ENTONCES
+      padre.hijoIzquierdo = hijo
+    SINO
+      padre.hijoDerecho = hijo
+  FIN
+  SINO // tiene 2 hijos
+  INICIO
+    reemplazo = predecesor(nodoAEliminar)
+    nodoAEliminar.dato = reemplazo.dato
+    eliminar(reemplazo)
+  FIN
+FIN

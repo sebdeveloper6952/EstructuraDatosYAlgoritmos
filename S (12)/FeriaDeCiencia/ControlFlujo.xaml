@@ -1,0 +1,15 @@
+﻿<Window x:Class="FeriaDeCiencia.ControlFlujo"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:FeriaDeCiencia"
+        mc:Ignorable="d"
+        Title="Control de Flujo de Feria" Height="110.096" Width="313.916" ResizeMode="NoResize">
+    <Grid>
+        <GroupBox x:Name="gB_Fase"  Header="Seleccionar Fase" Margin="2,-3,0.333,9.667">
+            <Grid x:Name="grid_Main" Margin="0,0,-1.667,-13.333"/>
+        </GroupBox>
+
+    </Grid>
+</Window>

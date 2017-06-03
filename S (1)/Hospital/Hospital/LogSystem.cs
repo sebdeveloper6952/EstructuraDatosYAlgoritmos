@@ -6,12 +6,16 @@ namespace Hospital
 
     public class LogSystem
     {
+        public static LogSystem instance;
+
         private const string logFileName = "log.txt";
 
         public LogSystem()
         {
             if (!File.Exists(logFileName))
                 File.Create(logFileName);
+            if (instance == null)
+                instance = this;
         }
 
         public void Loggear(ETipoLog tipo, object data)

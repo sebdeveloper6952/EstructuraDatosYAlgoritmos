@@ -1,0 +1,31 @@
+﻿<Window x:Class="ListasEnlazadas.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ListasEnlazadas"
+        mc:Ignorable="d"
+        Title="Demo Listas Enlazadas" Height="350" Width="525" Loaded="Window_Loaded">
+    <Grid>
+        <GroupBox x:Name="groupBox" Header="Operaciones" HorizontalAlignment="Left" Margin="10,0,0,0" VerticalAlignment="Top" Height="311" Width="234">
+            <Grid>
+                <Button x:Name="btn_AddFirst" Content="Add First" HorizontalAlignment="Left" Margin="14,10,0,0" VerticalAlignment="Top" Width="75" Click="btn_AddFirst_Click"/>
+                <Button x:Name="btn_RemoveFirst" Content="Remove First" HorizontalAlignment="Left" Margin="14,91,0,0" VerticalAlignment="Top" Width="75" Click="btn_RemoveFirst_Click"/>
+                <TextBox x:Name="tB_Elemento" HorizontalAlignment="Left" Height="23" Margin="102,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="93"/>
+                <Button x:Name="btn_AddLast" Content="Add Last" HorizontalAlignment="Left" Margin="14,50,0,0" VerticalAlignment="Top" Width="75" Click="btn_AddLast_Click"/>
+
+            </Grid>
+        </GroupBox>
+        <ListView x:Name="lV_Lista" HorizontalAlignment="Left" Height="220" Margin="277,91,0,0" VerticalAlignment="Top" Width="212">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="Elementos" Width="205"/>
+                </GridView>
+            </ListView.View>
+        </ListView>
+        <Label x:Name="l_ListaInfo" Content="Visualizacion de Lista" HorizontalAlignment="Left" Margin="319,10,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="l_ListaSize" Content="List size: 0" HorizontalAlignment="Left" Margin="275,63,0,0" VerticalAlignment="Top"/>
+
+
+    </Grid>
+</Window>

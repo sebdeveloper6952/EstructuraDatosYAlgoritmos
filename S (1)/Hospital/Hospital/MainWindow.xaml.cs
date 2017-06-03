@@ -13,7 +13,7 @@ namespace Hospital
     /// </summary>
     public partial class MainWindow : Window
     {
-        private static LogSystem logSystem;
+        private LogSystem logSystem;
         private CAdminPacientes admin;
 
         public MainWindow()
@@ -332,6 +332,23 @@ namespace Hospital
             else
             {
                 MessageBox.Show("Por favor selecciona un paciente.", "Error",
+                    MessageBoxButton.OK, MessageBoxImage.Error);
+            }
+        }
+
+        private void lV_Pacientes_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+            // modificar paciente
+            if (lV_Pacientes.SelectedIndex >= 0)
+            {
+                Window_ModificarPaciente window = new Window_ModificarPaciente(lV_Pacientes.SelectedIndex);
+                window.ShowDialog();
+                CUtilities.FillListView(lV_Pacientes, admin.GetListaPacientes());
+                CUtilities.FillListView(lV_AsistPacientes, admin.GetListaPacientes());
+            }
+            else
+            {
+                MessageBox.Show("Haz doble click en un paciente para ver sus detalles.", "Error",
                     MessageBoxButton.OK, MessageBoxImage.Error);
             }
         }

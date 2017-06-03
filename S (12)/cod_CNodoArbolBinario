@@ -1,0 +1,9 @@
+Algoritmo Insertar
+
+VARIABLES
+  CNodoArbolBinario nuevoNodo
+INPUT CPaciente p
+INICIO
+  nuevoNodo = CrearNuevoNodo(p, null, null, null)
+  raiz = nuevoNodo;
+FIN

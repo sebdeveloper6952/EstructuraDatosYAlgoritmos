@@ -1,0 +1,33 @@
+﻿<Window x:Class="HashTables.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:HashTables"
+        mc:Ignorable="d"
+        Title="HashTables" Height="256.667" Width="525" Loaded="Window_Loaded">
+    <Grid>
+        <GroupBox x:Name="gB_Ingresar" Header="Ingresar Empleado" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Height="199" Width="209">
+            <Grid HorizontalAlignment="Left" Height="189" VerticalAlignment="Top" Width="199" Margin="0,0,-2.333,-13">
+                <Label x:Name="l_Nombre" Content="Nombre" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top"/>
+                <Label x:Name="l_Apellido" Content="Apellido" HorizontalAlignment="Left" Margin="10,54,0,0" VerticalAlignment="Top"/>
+                <Label x:Name="l_ID" Content="ID" HorizontalAlignment="Left" Margin="9,100,0,0" VerticalAlignment="Top"/>
+                <TextBox x:Name="tB_Nombre" HorizontalAlignment="Left" Height="23" Margin="69,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+                <TextBox x:Name="tB_Apellido" HorizontalAlignment="Left" Height="23" Margin="69,54,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+                <TextBox x:Name="tB_ID" HorizontalAlignment="Left" Height="23" Margin="69,100,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+                <Button x:Name="btn_Ingresar" Content="Ingresar" HorizontalAlignment="Left" Margin="57,151,0,0" VerticalAlignment="Top" Width="75" Click="btn_Ingresar_Click"/>
+            </Grid>
+        </GroupBox>
+        <GroupBox x:Name="gB_Buscar" Header="Buscar Empleado" HorizontalAlignment="Left" Margin="237,10,0,0" VerticalAlignment="Top" Height="199" Width="245">
+            <Grid HorizontalAlignment="Left" Height="189" VerticalAlignment="Top" Width="235" Margin="0,0,-1.667,-13">
+                <Label x:Name="l_B_ID" Content="ID" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top"/>
+                <TextBox x:Name="tB_B_ID" HorizontalAlignment="Left" Height="23" Margin="86,14,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+                <Button x:Name="btn_Buscar" Content="Buscar" HorizontalAlignment="Left" Margin="54,51,0,0" VerticalAlignment="Top" Width="75" Click="btn_Buscar_Click"/>
+                <Button x:Name="btn_Eliminar" Content="Eliminar" HorizontalAlignment="Left" Margin="139,51,0,0" VerticalAlignment="Top" Width="75" Click="btn_Eliminar_Click"/>
+                <Label x:Name="l_Resultado" Content="Resultado" HorizontalAlignment="Left" Margin="87,87,0,0" VerticalAlignment="Top"/>
+                <Label x:Name="l_NombreEmpleado" Content="" HorizontalAlignment="Left" Margin="10,122,0,0" VerticalAlignment="Top" Width="215"/>
+            </Grid>
+        </GroupBox>
+
+    </Grid>
+</Window>
